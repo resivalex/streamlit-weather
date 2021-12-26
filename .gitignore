@@ -1,0 +1,6 @@
+.idea/
+.venv/
+docker-compose.yml
+Dockerfile
+run_env.sh
+map.html

@@ -1,0 +1,10 @@
+[tool.poetry]
+name = "streamlit-weather"
+version = "0.0.1"
+description = ""
+authors = ["Ivan Reshetnikov"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+clickhouse-driver = "^0.2.2"  # Python driver with native interface for ClickHouse
+streamlit = "^1.3.0"  # The fastest way to build data apps in Python
