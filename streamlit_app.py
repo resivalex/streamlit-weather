@@ -25,11 +25,12 @@ def main():
         index=['Время', 'Описание', 'Температура', 'Ощущается как', 'Скорость ветра'],
         columns=['Значение'],
         data=[
-            [datetime.datetime.fromtimestamp(timestamp).strftime('%H:%M:%S')],
+            [(datetime.datetime.fromtimestamp(timestamp) + datetime.timedelta(hours=3))
+                 .strftime('%H:%M:%S')],
             [weather_name],
             [f'{temperature:.0f}°С'],
             [f'{feels_like_temperature:.0f}°С'],
-            [f'{wind_speed}']
+            [f'{wind_speed:.0f}']
         ]
     )
     st.write('Последнее измерение')
