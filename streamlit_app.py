@@ -4,7 +4,7 @@ import datetime
 import pandas as pd
 
 
-st.set_page_config(page_title='Погода')
+st.set_page_config(page_title='Погода', layout='wide')
 
 
 def main():
@@ -26,11 +26,11 @@ def main():
         columns=['Значение'],
         data=[
             [(datetime.datetime.fromtimestamp(timestamp) + datetime.timedelta(hours=3))
-                 .strftime('%H:%M:%S')],
+                 .strftime('%H:%M')],
             [weather_name],
             [f'{temperature:.0f}°С'],
             [f'{feels_like_temperature:.0f}°С'],
-            [f'{wind_speed:.0f}']
+            [f'{wind_speed:.0f} м/с']
         ]
     )
     st.write('Последнее измерение')
