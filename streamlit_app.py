@@ -51,7 +51,7 @@ def main():
     )
     st.write('История изменения температуры')
     temperature_chart_df = pd.DataFrame(
-        index=[datetime.datetime.fromtimestamp(timestamp) for timestamp in history_df['timestamp']],
+        index=[datetime.datetime.fromtimestamp(timestamp) + datetime.timedelta(hours=3) for timestamp in history_df['timestamp']],
         data={
             'Температура, °С': history_df['temperature'].tolist(),
             'Ощущается как, °С': history_df['feels_like_temperature'].tolist()
@@ -60,7 +60,7 @@ def main():
     st.line_chart(temperature_chart_df)
     st.write('История изменения скорости ветра')
     wind_chart_df = pd.DataFrame(
-        index=[datetime.datetime.fromtimestamp(timestamp) for timestamp in history_df['timestamp']],
+        index=[datetime.datetime.fromtimestamp(timestamp) + datetime.timedelta(hours=3) for timestamp in history_df['timestamp']],
         data={
             'Скорость ветра, м/с': history_df['wind_speed'].tolist()
         }
