@@ -4,7 +4,7 @@ pip install poetry
 poetry config virtualenvs.in-project true
 poetry update
 poetry install
-poetry run streamlit run app.py
+poetry run streamlit run streamlit_app.py
 
 echo "\nWait for Ctrl-C"
 trap 'kill $(jobs -p)' INT
